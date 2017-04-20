@@ -1,3 +1,4 @@
+import pymongo
 # this file include the configuration used in this project,please input your own username and password
 # init website address
 html_address = 'http://bbs.imoutolove.me/'
@@ -9,7 +10,15 @@ password = ''
 
 # fid indicate which section you want
 # fid 4:Video 5:Painting 6:Game 14:CG 128:Voice 135:GalGame
-fid = 4
+fid_table = {
+    4: "Video",
+    5: "Painting",
+    6: "Game",
+    14: "CG",
+    128: "Voice",
+    135: "GalGame"
+}
+fid = 14
 
 # fid_type indicate which category you want
 # Video 0:All 1:Unknown 2:Raw 3:Chinese with Mosaic 4:Chinese without Mosaic 5:3D 6:MMD
@@ -20,5 +29,11 @@ fid = 4
 # GalGame 0:All
 fid_type = 0
 
+# mongodb config
+MONGO_HOST = "10.128.6.39"
+MONGO_PORT = 8290
+
+client = pymongo.MongoClient(MONGO_HOST, MONGO_PORT)
+db = client.np
 
 

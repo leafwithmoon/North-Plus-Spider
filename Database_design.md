@@ -2,7 +2,8 @@
 {
 
     "title":string,
-    "category":number,
+    "url":string,
+    "category":string,
     "baiduyun_link":{
         1:string,
         2:string
@@ -19,5 +20,8 @@
         1:string,
         2:string
     },
-    "possible_password"
+    "possible_password":{
+        1:string,
+        2:string
+    }
 }
